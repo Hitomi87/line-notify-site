@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>LINE通知ページ</title>
+</head>
+<body>
+  <h1>Google Classroom 通知</h1>
+  <p>下のボタンを押すとLINEに通知が送られます。</p>
+
+  <button onclick="sendNotification()">通知を送信</button>
+
+  <script>
+    function sendNotification() {
+      fetch('/notify', {
+        method: 'POST'
+      })
+      .then(() => alert('LINEに通知を送信しました！'))
+      .catch(() => alert('通知に失敗しました'));
+    }
+  </script>
+</body>
+</html>
