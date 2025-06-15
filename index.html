@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ページ</title>
+</head>
+<body>
+  <h1>ページ</h1>
+  <p>ボタンを押す</p>
+
+  <button onclick="sendNotification()">PUSH</button>
+
+  <script>
+    function sendNotification() {
+      fetch('/notify', {
+        method: 'POST'
+      })
+      .then(() => alert('SUCCESS'))
+      .catch(() => alert('FAILED'));
+    }
+  </script>
+</body>
+</html>
